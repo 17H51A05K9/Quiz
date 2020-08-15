@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start":"nodemon server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/17H51A05K9/Quiz/issues"
   },
-  "homepage": "https://github.com/17H51A05K9/Quiz#readme"
+  "homepage": "https://github.com/17H51A05K9/Quiz#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0",
+    "nodemon": "^2.0.4"
+  }
 }

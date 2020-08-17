@@ -8,7 +8,10 @@ $('.signupbtn').click(async()=>{
     await $.post('/signupdata',userdata,(data,status)=>{
             if(status=="success")
             {
-              console.log(data)
+              if(data.name!="MongoError")
+              {
+                window.location.replace('/')
+              }
             }
     })
 })

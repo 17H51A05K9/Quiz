@@ -1,4 +1,5 @@
 const usermodel=require('../models/usermodel')
+const challengemodel=require('../models/challengemodel')
 module.exports.find=async(data)=>{
      var user=await usermodel.findOne({email:data})
      return user
@@ -13,4 +14,12 @@ module.exports.checklogin=async(data)=>{
           }
      }
      return null
+}
+module.exports.logout=async(data)=>{
+     var user=await usermodel.findById({_id:data})
+     return user
+}
+module.exports.checkproblem=async(data)=>{
+     var user=await challengemodel.findOne({description:data.description})
+     return user
 }

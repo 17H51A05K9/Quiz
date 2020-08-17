@@ -1,0 +1,23 @@
+#problemdescription{
+    margin-left: auto;
+    margin-right: auto;
+    width:800px
+}
+#comment{
+   text-align: center;
+}
+.form-group{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+}
+.topic,.diff{
+    width:300px
+}
+button{
+    float:right;
+}
+#op1,#op2,#op3,#op4,#ca,#difficulty,#top,#problemdescription{
+    border:2px solid black
+}

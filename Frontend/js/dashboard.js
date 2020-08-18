@@ -2,7 +2,7 @@ var userid={
     id:localStorage.getItem("id")
 }
 $('#logout').click(async()=>{
-    
+    console.log(1)
    await $.post('/logout',userid,(data,status)=>{
         if(status=="success")
         {

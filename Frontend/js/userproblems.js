@@ -2,6 +2,16 @@ var userid={
     id:localStorage.getItem("id")
 }
 // var asd=async()=>{
+$('#logout').click(async()=>{
+        console.log(1)
+       await $.post('/logout',userid,(data,status)=>{
+            if(status=="success")
+            {
+                console.log(data)
+                window.location.replace('/')
+            }
+       })
+    })
  $.get('/allmyproblems',userid,(data,status)=>{
     if(status=="success")
     {

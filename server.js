@@ -27,6 +27,7 @@ app.post('/logout',async(req,res)=>{
             await savedata.save().then((data)=>{
                 localStorage.removeItem("id")
                  res.send(data)
+                 
             }).catch(e=>{
                 res.send(e);
             })

@@ -10,6 +10,7 @@ db.connect
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname+'/Frontend'))
+
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/index.html')
 })
@@ -36,6 +37,9 @@ app.post('/logout',async(req,res)=>{
 })
 app.get('/signup',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/signup.html')
+})
+app.get('/userproblems',(req,res)=>{
+    res.sendFile(__dirname+'/Frontend/html/userproblems.html')
 })
 app.get('/dashboard',(req,res)=>{
    res.sendFile(__dirname+'/Frontend/html/dashboard.html')

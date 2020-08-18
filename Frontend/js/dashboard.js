@@ -15,7 +15,8 @@ $('#GetAllProblems').click(async()=>{
       await $.get('/allmyproblems',userid,(data,status)=>{
                if(status=="success")
                {
-                   console.log(JSON.parse(JSON.stringify(data)));
+                  
+                window.location.replace('/userproblems')
                }
        })
 })

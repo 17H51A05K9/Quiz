@@ -16,7 +16,7 @@ $('#save').click(async()=>{
          if(status=="success")
          {
              console.log(data)
-             window.location.replace('/dashboard')
+             window.location.replace('/userproblems')
          }
     })
 })

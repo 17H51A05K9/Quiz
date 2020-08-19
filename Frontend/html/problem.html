@@ -5,6 +5,38 @@
         <link rel="stylesheet" href="/css/problem.css">  
     </head>
     <body >
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" >Quiz</a>
+       
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link"href="/practice">Practice</a>
+              </li>
+         
+            
+          <li class="nav-item">
+            <a class="nav-link" id="logout">Logout</a>
+          </li>
+       
+          <li class="nav-item">
+            <a class="nav-link" id="getall"href="/userproblems">GetAllProblems</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+             
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+           
+          </li>
+        </div>
+        </ul>
+      </nav>
+
         <div class="description">
             <div id="comment" > <label for="comment" ><strong>Problem Description:</strong></label></div>
            
@@ -45,6 +77,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
          <script src="/js/problem.js"></script>
-         <script src="/js/login.js"></script>
+        
     </body>
 </html>

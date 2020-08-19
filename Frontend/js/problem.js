@@ -1,3 +1,7 @@
+var userid={
+    id:localStorage.getItem("id")
+}
+$('#navbardrop').html(localStorage.getItem("username"))
 $('#save').click(async()=>{
     
     var problem={
@@ -11,12 +15,23 @@ $('#save').click(async()=>{
         correctanswer:document.getElementById('ca').value,
         author:localStorage.getItem("id").toString()
     }
-    console.log(problem)
+    
+   // console.log(problem)
     await $.post('/myproblems',problem,(data,status)=>{
          if(status=="success")
          {
-             console.log(data)
+            // console.log(data)
              window.location.replace('/userproblems')
          }
     })
 })
+$('#logout').click(async()=>{
+    
+    await $.post('/logout',userid,(data,status)=>{
+         if(status=="success")
+         {
+             console.log(data)
+             window.location.replace('/')
+         }
+    })
+ })

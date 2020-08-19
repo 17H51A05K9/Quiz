@@ -1,7 +1,7 @@
 var userid={
     id:localStorage.getItem("id")
 }
-
+$('#navbardrop').html(localStorage.getItem("username"))
     $.get('/allproblems',(data,status)=>{
         if(status=="success")
     {

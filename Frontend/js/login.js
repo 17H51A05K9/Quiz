@@ -20,6 +20,7 @@ $('#login').click(async()=>{
                      else
                      {
                         localStorage.setItem("id",data._id)
+                        localStorage.setItem("username",data.username)
                         window.location.replace('/dashboard');
                      }
                 }

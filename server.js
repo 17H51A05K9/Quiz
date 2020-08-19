@@ -14,6 +14,9 @@ app.use(express.static(__dirname+'/Frontend'))
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/index.html')
 })
+app.get('/createproblem',(req,res)=>{
+    res.sendFile(__dirname+'/Frontend/html/problem.html')
+})
 app.get('/login',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/login.html')
 })
@@ -50,6 +53,7 @@ app.get('/userproblems',(req,res)=>{
 app.get('/dashboard',(req,res)=>{
    res.sendFile(__dirname+'/Frontend/html/dashboard.html')
 })
+
 app.get('/problem',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/problem.html')
 })

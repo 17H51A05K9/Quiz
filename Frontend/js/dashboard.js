@@ -11,6 +11,7 @@ $('#logout').click(async()=>{
         }
    })
 })
+$('#navbardrop').html(localStorage.getItem("username"))
 // $('#getall').click(async()=>{
     // $.get(`/userproblems/${userid.id}`,(data,status)=>{
     //     if(status=="success")

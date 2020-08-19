@@ -1,18 +1,9 @@
 var userid={
     id:localStorage.getItem("id")
 }
-$('#logout').click(async()=>{
-    
-    await $.post('/logout',userid,(data,status)=>{
-         if(status=="success")
-         {
-             console.log(data)
-             window.location.replace('/')
-         }
-    })
- })
-$.get(`/userproblems/${userid.id}`,(data,status)=>{
-    if(status=="success")
+
+    $.get('/allproblems',(data,status)=>{
+        if(status=="success")
     {
         var question=""
         var c=1
@@ -33,4 +24,15 @@ $.get(`/userproblems/${userid.id}`,(data,status)=>{
         }
         $('body').append(question)
     }
-})
+    })
+
+$('#logout').click(async()=>{
+    
+    await $.post('/logout',userid,(data,status)=>{
+         if(status=="success")
+         {
+             console.log(data)
+             window.location.replace('/')
+         }
+    })
+ })

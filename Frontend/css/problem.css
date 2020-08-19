@@ -3,6 +3,9 @@
     margin-right: auto;
     width:800px
 }
+body{
+    background-color: antiquewhite;
+  }
 #comment{
    text-align: center;
 }

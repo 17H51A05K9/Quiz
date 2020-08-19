@@ -16,7 +16,7 @@ module.exports.checklogin=async(data)=>{
      return null
 }
 module.exports.logout=async(data)=>{
-     var user=await usermodel.findById({_id:data})
+     var user=await usermodel.findOne({_id:data})
      return user
 }
 module.exports.checkproblem=async(data)=>{

@@ -7,7 +7,7 @@ const usermodel=require('./backend/models/usermodel')
 const challengemodel=require('./backend/models/challengemodel')
 var app=express()
 db.connect
-app.use(bodyParser.urlencoded({ extended: false }))
+ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname+'/Frontend'))
 
@@ -16,6 +16,12 @@ app.get('/',(req,res)=>{
 })
 app.get('/login',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/login.html')
+})
+app.get('/userproblems',(req,res)=>{
+    res.sendFile(__dirname+'/Frontend/html/userproblems.html')
+})
+app.get('/practice',(req,res)=>{
+    res.sendFile(__dirname+'/Frontend/html/practice.html')
 })
 app.post('/logout',async(req,res)=>{
  //  console.log(req.body.id)
@@ -27,7 +33,6 @@ app.post('/logout',async(req,res)=>{
             await savedata.save().then((data)=>{
                 localStorage.removeItem("id")
                  res.send(data)
-                 
             }).catch(e=>{
                 res.send(e);
             })
@@ -49,6 +54,7 @@ app.get('/problem',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/problem.html')
 })
 app.post('/logindata',async(req,res)=>{
+    console.log(req.body)
     try{ 
      var userdata=await userlib.checklogin(req.body)
      if(userdata){
@@ -71,6 +77,7 @@ app.post('/logindata',async(req,res)=>{
     }
 })
 app.post('/signupdata',async(req,res)=>{
+    console
      var userdata=await userlib.find(req.body.email);
      //if(userdata==null)
      {
@@ -90,7 +97,7 @@ app.post('/myproblems',async(req,res)=>{
           var problem=await userlib.checkproblem(req.body)
           var saveproblem=new challengemodel(req.body);
          await  saveproblem.save().then((data)=>{
-             console.log(data)
+            // console.log(data)
               res.send(data);
           }).catch(e=>{
               console.log(e);
@@ -101,16 +108,23 @@ app.post('/myproblems',async(req,res)=>{
           console.log(e)
       }
 })
-app.get('/allmyproblems',async(req,res)=>{
+app.get('/userproblems/:id',async(req,res)=>{
+     console.log(req.params.id)
+  //   console.log(req.)
       try{
-          var problems=await challengemodel.find(req.body.id)
-          console.log(problems);
+          var problems=await challengemodel.find({author:req.params.id})
+         // console.log(problems);
           res.send(problems);
       }
       catch(e)
       {
           console.log(e);
       }
+})
+app.get('/allproblems',async(req,res)=>{
+   var problems=await challengemodel.find({})
+   res.send(problems)
+
 })
 app.listen(config.port,(err)=>{
     if(err)

@@ -4,8 +4,10 @@ $('#login').click(async()=>{
         username:document.getElementById('username').value,
         password:document.getElementById('password').value
     }
+    console.log(userdata)
     await $.post('/logindata',userdata,async(data,status)=>{
-                if(status=="success")
+                //console.log(userdata)
+                  if(status=="success")
                 {
                     console.log(data)
                      if(data=="user not found")

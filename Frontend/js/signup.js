@@ -5,7 +5,7 @@ $('.signupbtn').click(async()=>{
         password:document.getElementById('password').value,
         username:document.getElementById('username').value
     }
-    console.log(userdata)
+    //console.log(userdata)
     await $.post('/signupdata',userdata,(data,status)=>{
             if(status=="success")
             {

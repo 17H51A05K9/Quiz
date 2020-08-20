@@ -9,7 +9,7 @@ $('#login').click(async()=>{
                 //console.log(userdata)
                   if(status=="success")
                 {
-                    console.log(data)
+                   // console.log(data)
                      if(data=="user not found")
                      {
                         $('#show').html("Ivalid Credentials")

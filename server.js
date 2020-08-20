@@ -65,7 +65,7 @@ app.post('/logindata',async(req,res)=>{
          userdata.loggedin=true;
          var logged=new usermodel(userdata)
          logged.save().then((data)=>{
-             console.log(data)
+            // console.log(data)
             res.send(data);
          }).catch(err=>{
              console.log(err);
@@ -87,7 +87,7 @@ app.post('/signupdata',async(req,res)=>{
      {
          var saveuserdata=new usermodel(req.body);
          await  saveuserdata.save().then((data)=>{
-             console.log(data)
+            // console.log(data)
               res.send(data);
           }).catch(err=>{
               res.send(err)

@@ -30,7 +30,7 @@ $('#logout').click(async()=>{
     await $.post('/logout',userid,(data,status)=>{
          if(status=="success")
          {
-             console.log(data)
+           //  console.log(data)
              window.location.replace('/')
          }
     })

@@ -2,8 +2,8 @@ body{
     background-image: url("../images/quiz.png"); 
   
     /* Background image is centered vertically and horizontally at all times */ 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    
+    max-width: 100%;
+    height: auto;
    
 }

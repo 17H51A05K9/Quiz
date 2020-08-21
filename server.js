@@ -5,6 +5,7 @@ const bodyParser=require('body-parser')
 const userlib=require('./backend/lib/userlib')
 const usermodel=require('./backend/models/usermodel')
 const challengemodel=require('./backend/models/challengemodel')
+const bcrypt=require('bcrypt')
 var app=express()
 db.connect
  app.use(bodyParser.urlencoded({ extended: false }))
@@ -34,7 +35,7 @@ app.post('/logout',async(req,res)=>{
             userdata.loggedin=false;
             var savedata=new usermodel(userdata)
             await savedata.save().then((data)=>{
-                localStorage.removeItem("id")
+                //localStorage.removeItem("id")
                  res.send(data)
             }).catch(e=>{
                 res.send(e);
@@ -81,10 +82,12 @@ app.post('/logindata',async(req,res)=>{
     }
 })
 app.post('/signupdata',async(req,res)=>{
-    console
+  //  console
      var userdata=await userlib.find(req.body.email);
      //if(userdata==null)
      {
+         var pass=await bcrypt.hash(req.body.password,8);
+         req.body.password=pass
          var saveuserdata=new usermodel(req.body);
          await  saveuserdata.save().then((data)=>{
             // console.log(data)

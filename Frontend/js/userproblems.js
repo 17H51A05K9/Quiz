@@ -20,17 +20,14 @@ $.get(`/userproblems/${userid.id}`,(data,status)=>{
         var v=1
         for(let i=0;i<data.length;i++)
         {
-            question+="<div id=\"table\"><table>"
-            question+="<tr><th>"+v+". "+data[i].description+"</th></tr></table>"
-            question+="<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"defaultCheck"+c+"\"><label class=\"form-check-label\" for=\"defaultCheck"+c+"\">"+data[i].option1+"</label></div>"
-            c=c+1
-            question+="<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"defaultCheck"+c+"\"><label class=\"form-check-label\" for=\"defaultCheck"+c+"\">"+data[i].option2+"</label></div>"
-            c=c+1
-            question+="<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"defaultCheck"+c+"\"><label class=\"form-check-label\" for=\"defaultCheck"+c+"\">"+data[i].option3+"</label></div>"
-            c=c+1
-            question+="<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"defaultCheck"+c+"\"><label class=\"form-check-label\" for=\"defaultCheck"+c+"\">"+data[i].option4+"</label><hr></div>"
-             c=c+1
-             v++
+            question+="<h3>Question"+c+"</h3>";
+            question+="<p><strong>"+data[i].description+"</strong></p>"
+            question+="<div id=\"radios\"> <div><input type=\"radio\" name=\"joke\" value=\"bed\" />"+data[i].option1+"</div><div><input type=\"radio\" name=\"joke\" value=\"bed\" />"+data[i].option2+"</div><div><input type=\"radio\" name=\"joke\" value=\"snake\" /> "+data[i].option3+"</div>"
+            question+="<div><input type=\"radio\" name=\"joke\" value=\"bed\" />"+data[i].option4+"</div></div><br>"
+            //question+="<div><button type=\"button\" class=\"btn btn-primary\">Submit</button><div>"
+          question+="<div class=\"container-fluid\"><div class=\"row\"><div class=\"col-xs-5\"></div><div class=\"col-xs-2\"><a class=\"btn btn-md btn-primary\">Submit</a></div><div class=\"col-xs-5\"></div></div></div>"
+          question+="<hr>"  
+          c++ 
         }
         $('body').append(question)
     }

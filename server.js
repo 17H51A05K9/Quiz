@@ -27,6 +27,9 @@ app.get('/userproblems',(req,res)=>{
 app.get('/practice',(req,res)=>{
     res.sendFile(__dirname+'/Frontend/html/practice.html')
 })
+app.get('/compete',(req,res)=>{
+    res.sendFile(__dirname+"/Frontend/html/compete.html")
+})
 app.post('/logout',async(req,res)=>{
  //  console.log(req.body.id)
     try{

@@ -1,0 +1,1 @@
+$('#navbardrop').html(localStorage.getItem("username"))
